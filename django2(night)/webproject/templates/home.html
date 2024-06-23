@@ -1,0 +1,14 @@
+
+{% block content %}
+
+<h1>Home</h1>
+<h2>Welcome, {{ user_name }}!</h2>
+<h2>Book List:</h2>
+    <ul>
+        {% for book in books %}
+            <li>{{ book.title }}: {{ book.description }}</li>
+        {% endfor %}
+    </ul>
+
+
+{% endblock %}
