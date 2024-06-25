@@ -3,88 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Naman Website</title>
+    <title>CSS Grid and Flexbox Layout</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="icon" type="image/jpg" href="fevicon.jpg">
 </head>
 <body>
+    <style>/* styles.css */
 
-    
-    <header>
-       <h1> This is header</h1>
+        /* Reset default margin and padding */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        /* Body styles */
+        body {
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-rows: auto 1fr auto; /* Header, Main Content, Footer */
+            min-height: 100vh;
+        }
+        
+        /* Header styles */
+        .header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            grid-row: 1;
+        }
+        
+        /* Main grid container */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 200px 1fr; /* Sidebar, Main Content */
+            gap: 20px;
+            padding: 20px;
+            grid-row: 2;
+        }
+        
+        /* Sidebar styles */
+        .sidebar {
+            background-color: #f0f0f0;
+            padding: 10px;
+        }
+        
+        .sidebar h2 {
+            margin-bottom: 10px;
+        }
+        
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        
+        .sidebar ul li {
+            margin-bottom: 5px;
+        }
+        
+        .sidebar ul li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 5px 10px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .sidebar ul li a:hover {
+            background-color: #ddd;
+        }
+        
+        /* Main content styles */
+        .main-content {
+            background-color: #fff;
+            padding: 20px;
+        }
+        
+        /* Footer styles */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            grid-row: 3;
+        }
+        </style>
+    <header class="header">
+        <h1>Header Section</h1>
     </header>
-    
 
-    <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About Us</a></li>
-            <li><a href="product.html">Our Products</a></li>
-            <li><a href="contact.html">Contact us</a></li>
-            <!-- <li>Downloan an <a href="fevicon.jpg" download="">Fevicon</a></li>
-            <a href="mailto:namanpunn3@gmail.com">namanpunn3@gmail.com</a>
-            <a href="tel:+91-87687978">8798848418</a> -->
-        </ul>
-    </nav>
-    
-
-
-    <main>
-        <figure>
-        <img src="fevicon.jpg" alt="this is image" height="40px" width="50 px">
-        <figcaption> fevicon </figcaption>
-        </figure>
-        <div id="general" ><b>General Products</b> <br>
-           sumenda? Facere mollitia iure repellendus accusantium cumque placeat nesciunt debitis!
-            Quo cupiditate saepe ab accusamus quod pariatur ducimus, nulla vel odit quia, id, tempora necessitatibus exercitationem! Debitis aut nihil fugit alias animi quo? Asperiores omnis animi similique illo, ducimus modi!
-        </div>
-        <br>
-        <section id="popular">
-
-            <b>popular products <br></b>
-            <br>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam aspernatur voluptatem beatae cumque accusamus reiciendis obcaecati aut architecto fugit laborum! Voluptatibus vitae totam fugit alias quod hic, molestiae qui sequi.
-            Alias blanditiis iste nulla? Accusamus, voluptate perspiciatis. Similique, qui? Doloribus sint cumque odit minima corporis debitis harum, illuo tempore libero fugiat explicabo fugit molestiae laudantium molestias. Eius illo qui enim sed at. Facilis quasi corporis doloribus sequi soluta obcaecati voluptates exercitationem voluptatibus?
-            Facere impedit odio illo necessitatibus alias? Nostrum est, molestias nesciunt sequi quod porro iste blanditiis placeat dolorem quasi minima facilis, repellat accusantium? Quam repudiandae a incidunt corrupti dolorem, maiores at.
-        </section>
-        <br>
-        <div id="eatable"> <b>eatable </b><br> Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit odio possimus quod facilis, nam dolorum a minus quis sint similique, ab obcaecati asperiores voluptates porro est id, eligendi voluptatibus quidem!</div>
-
-        <p>This is the <strong>main body </strong> of the website </p>
-
-        <aside> 
-            <details> 
-                <summary>What is html</summary>
-                <p>Hyper text markup language</p>
-            </details>
+    <div class="main-grid">
+        <aside class="sidebar">
+            <h2>Sidebar</h2>
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+            </ul>
         </aside>
 
-    </main>
-
-    <hr>
-    <br>
-    <div class="General_Products"><b>General Products</b> <br>
-vitae dolore accusantium impedit provident fuga possimus similique.
-        Quos nesciunt, harum odit laboriosam dolores amet, porro quibusdam reprehenderit, voluptates earum animi facere numquam atque? Praesentium illo id mollitia qui consequuntur inventore eligendi iusto labore? Dolorem quae culpa optio.
-        Laboriosam facilis praesentium suscipit quasi aut repellendus nostrum. Placeat deleniti ex, voluptates error ratione, id, distinctio qui delectus cum numquam aper vel odit quia, id, tempora necessitatibus exercitationem! Debitis aut nihil fugit alias animi quo? Asperiores omnis animi similique illo, ducimus modi! lorem*50
+        <main class="main-content">
+            <h2>Main Content Area</h2>
+            <p>This is the main content area.</p>
+        </main>
     </div>
-    <br><br>
 
-   
-
-    <select name="country">
-        <option value="usa">USA</option>
-        <option value="canada">Canada</option>
-        <option value="mexico">Mexico</option>
-      </select>
-
-      <textarea name="message" rows="10" cols="50">Enter your message</textarea>
-<br><br>
-<input type="file" name="upload">
-    <Footer>
-       <h6> this <em>is</em> the footer </h6>
-       <a href="/">Back to home</a>
-    </Footer>
-
-
+    <footer class="footer">
+        <p>Footer Section</p>
+    </footer>
 </body>
 </html>

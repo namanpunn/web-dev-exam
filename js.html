@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+</head>
+<body>
+    <form id="converterForm">
+        <input type="number" id="amount" placeholder="Amount">
+        <select id="currency">
+            <option value="EUR">EUR</option>
+            <option value="USD">USD</option>
+        </select>
+        <button type="submit">Convert</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        const rates = {
+            'EUR': 0.85,
+            'USD': 1
+        };
+
+        localStorage.setItem('conversionRates', JSON.stringify(rates));
+
+        document.getElementById('converterForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            const amount = parseFloat(document.getElementById('amount').value);
+            const currency = document.getElementById('currency').value;
+            const conversionRates = JSON.parse(localStorage.getItem('conversionRates'));
+            const rate = conversionRates[currency];
+            const result = amount * rate;
+            document.getElementById('result').textContent = `Converted amount: ${result} ${currency}`;
+        });
+    </script>
+</body>
+</html>
